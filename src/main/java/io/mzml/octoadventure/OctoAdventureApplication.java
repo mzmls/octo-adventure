@@ -11,7 +11,7 @@ public class OctoAdventureApplication {
 
 	@RequestMapping("/")
 	public String home() {
-		return "Hello world!";
+		return "Hi!";
 	}
 
 	public static void main(String[] args) {

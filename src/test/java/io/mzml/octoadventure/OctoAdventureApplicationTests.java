@@ -28,8 +28,13 @@ public class OctoAdventureApplicationTests {
 	@Test
 	public void contextLoads() {
 		ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + this.port + "/", String.class);
-		System.out.print(entity.getHeaders());
 		assertEquals(HttpStatus.OK, entity.getStatusCode());
+
 	}
 
+	@Test
+	public void homeControllerSaysHi() {
+		ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:" + this.port + "/", String.class);
+		assertEquals("Hi!", entity.getBody());
+	}
 }
